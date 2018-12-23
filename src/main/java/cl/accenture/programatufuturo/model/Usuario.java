@@ -2,11 +2,14 @@ package cl.accenture.programatufuturo.model;
 
 import sun.rmi.transport.ObjectTable;
 
+// clase Usuario
 public class Usuario {
 
+    // Con sus atributos respectivos segun la tabla SQL
     private String username, password, correoElectronico;
     private int intentosFallidos;
 
+    // Cosntructor por defecto
     public Usuario() {
         this.username = "";
         this.password= "";
@@ -14,6 +17,7 @@ public class Usuario {
         this.intentosFallidos = 0;
     }
 
+    // Constructor con parametros
     public Usuario(String username, String password, String correoElectronico, int intentosFallidos) {
         this.username = username;
         this.password = password;
@@ -21,6 +25,8 @@ public class Usuario {
         this.intentosFallidos = intentosFallidos;
     }
 
+
+    // getters y setter para mostrar o modificar según corresponda
     public String getUsername() {
         return username;
     }
@@ -53,6 +59,9 @@ public class Usuario {
         this.correoElectronico = correoElectronico;
     }
 
+
+    // equals modificado para comparar 2 usuarios
+    // segun su Username, usamos .equal en este caso ya que son Strings
     public boolean equals(Object o) {
         if(o instanceof Usuario) {
             Usuario user = (Usuario) o;
